@@ -7,7 +7,7 @@
      height: 100%;
  }
 
- s {
+ a {
      text-decoration: none;
      font-size: 50px;
  }
@@ -20,12 +20,37 @@
      margin: 0;
  }
 
- .indicatora {
-     width: 20px;
-     height: 20px;
-     background-color: aquamarine;
+ .indicator {
+     width: 199px;
+     height: 199px;
+     background-color: rgb(2, 54, 9);
      border-width: 2px;
      border-style: solid;
      border-color: transparent;
      border-radius: 50%;
+     margin: 9px auto 9px;
+     display: block;
+ }
+
+ body {
+     background-color: chartreuse;
+ }
+
+ .ss {
+
+     border-width: 2px;
+     border-style: solid;
+
+     border-radius: 50%;
+     margin: 9px auto 9px;
+     display: block;
+ }
+
+ .gg {
+     border-width: 500000px;
+
+
+
+     margin: 90px auto 90px;
+
  }

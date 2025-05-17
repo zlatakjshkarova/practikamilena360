@@ -1,40 +1,56 @@
-let imagi = ['img/48b04d194725c6ffbd679d04f864f97f.jpg', 'img/unnamed.jpg', 'img/i.webp']
-let slid = document.querySelectorAll('#slid')
-let indicators = document.querySelectorAll('#indicatora')
-let indicatarList = document.querySelectorAll('#indicatarList')
+let imagi = ['1577531889179623112.jpg', 'kot-dingus-mem-360x270.jpg', 'plachuschiy_kot.jpg']
+let slid = document.querySelector('#slid')
+let indicators
+let indicatarList = document.querySelector('#indicatarList')
 for (let i = 0; i < imagi.length; i++) {
     let indicatora = document.createElement('li')
-    indicatarList = document.appendChild('#indicatora')
+    indicatora.classList.add('indicator');
+    indicatarList.appendChild(indicatora)
 }
+
+indicators = document.querySelectorAll('.indicator')
+
 let i = 0
 slid.src = `img/${imagi[0]}`;
 indicators[0].style.borderColor = 'red';
 
+let left = document.querySelector('#left')
+
+let right = document.querySelector('#right')
 
 
-let left = querySelector('left')
 
-let right = querySelector('right')
-
-left.addEventListener('click', (prev) => {
-    e.preventDefault()
-    function prev() {
-        if (i < 0) {
-            i = imagi.length - 1;
-        }
+left.addEventListener('click', (event) => {
+    event.preventDefault()
+    prev()
+})
+right.addEventListener('click', (event) => {
+    event.preventDefault()
+    next()
+})
+function prev() {
+    i--;
+    if (i < 0) {
+        i = imagi.length - 1;
     }
-    let i = 0
+    slid.src = `img/${imagi[i]}`
+    for (let i = 0; i < imagi.length; i++) {
+        indicators[i].style.borderColor = 'transparent'
+    }
+    indicators[i].style.borderColor = 'red';
+}
+function next() {
+    i++
+    if (i > imagi.length - 1) {
+        i = 0;
+    }
     slid.src = `img/${imagi[i]}`
     for (let i = 0; i < imagi.length; i++) {
         indicators[i].style.borderColor = 'transparent'
 
     }
-    indicators[i].style.borderColor = 'red';
-    if (i > images.length - 1) {
-        i = 0
-    }
-})
-
+    indicators[i].style.borderColor = 'red'
+}
 
 
 
